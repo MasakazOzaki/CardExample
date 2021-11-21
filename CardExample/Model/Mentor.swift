@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Mentor {
-    var image: Image?
+    var imageName: String?
     var nickname: String
     var realName: String
     var cources: String
@@ -17,7 +17,11 @@ struct Mentor {
 }
 
 
-struct MentorInfomation {
+struct MentorInfomation: Identifiable {
     var title: String
     var body: String
+    
+    var id : String {
+        return self.title
+    }
 }

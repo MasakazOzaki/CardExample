@@ -13,7 +13,7 @@ final class DataModel {
     private init() {}
 
     var mentors: [Mentor] = [
-        Mentor(image: Image("choccho", bundle: .main),
+        Mentor(imageName: "choccho",
                nickname: "Choccho",
                realName: "Sho Cho",
                cources: "􀫊􀆪􀎶􀛸􀙚􀎑",
@@ -25,7 +25,7 @@ final class DataModel {
                 Color(.sRGB, red: 174 / 255, green: 77 / 255, blue: 1, opacity: 1)])
               ),
         
-        Mentor(image: Image("choccho", bundle: .main),
+        Mentor(imageName: "choccho",
                nickname: "Choccho",
                realName: "Sho Cho",
                cources: "􀫊􀆪􀎶􀛸􀙚􀎑",
