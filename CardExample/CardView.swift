@@ -16,7 +16,7 @@ struct CardView: View {
             VStack(alignment: isExpanded ? .leading : .center) {
                 //MARK: - 常に表示するコンテンツ
                 Spacer()
-                Image("choccho")
+                Image(mentor.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
@@ -65,15 +65,10 @@ struct CardView: View {
                 
             }
             .padding()
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .background(LinearGradient(gradient: mentor.gradient,
                                        startPoint: UnitPoint(x: 0, y: 1), endPoint: UnitPoint(x: 1, y: 0)))
-            .frame(width: geometry.size.width * 0.8,
-                   height: geometry.size.width / CGFloat(16 / 10))
-            .background(LinearGradient(gradient: mentor.gradient,
-                                       startPoint: UnitPoint(x: 0, y: 1), endPoint: UnitPoint(x: 1, y: 0)))
-            .cornerRadius(10)
-            .shadow(radius: 10)
+            
         }
     }
 }

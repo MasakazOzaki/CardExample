@@ -13,9 +13,9 @@ struct ContentView: View {
     private static let cardOffset: CGFloat = 20
     private static let cardOpacity: Double = 0.05
     private static let cardShrinkRatio: CGFloat = 0.05
-    private static let cardRotationAngle: Double = 16
+    private static let cardRotationAngle: Double = 8
     private static let cardScaleWhenDragginDown: CGFloat = 1.1
-    private static let padding: CGFloat = 20
+    private static let padding: CGFloat = 60
     
     @EnvironmentObject var inventory: Inventory
     
@@ -24,20 +24,25 @@ struct ContentView: View {
     @State var isDragging: Bool = false
     @State var firstCardScale: CGFloat = Self.cardScaleWhenDragginDown
     @State var isPresented = false
+    @State var isExpanded = false
     @State var shouldDelay = true
+    @State var selectedMentor: Mentor?
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                Spacer()
+        NavigationView {
+            GeometryReader { geometry in
                 ZStack() {
                     if self.isPresented {
                         ForEach(self.inventory.mentors) { mentor in
                             CardView(mentor: mentor)
+                                .aspectRatio(10/16, contentMode: .fit)
+                            
+                                .cornerRadius(24)
+                                .shadow(radius: 10)
                                 .opacity(self.opacity(for: mentor))
                                 .offset(x: 0, y: self.offset(for: mentor))
                                 .scaleEffect(self.scaleEffect(for: mentor))
-                                .rotation3DEffect(self.rotationAngle(for: mentor), axis: (x: 0.5, y: 1, z: 0))
+                                .rotation3DEffect(self.rotationAngle(for: mentor), axis: (x: 0.5, y: 2, z: -1))
                                 .gesture(
                                     DragGesture()
                                         .onChanged({ (value) in
@@ -49,8 +54,15 @@ struct ContentView: View {
                                         })
                                 )
                                 .onTapGesture {
-                                    let newMentors = self.inventory.mentors.filter { $0 != mentor } + [mentor]
-                                    self.inventory.mentors = newMentors
+                                    if inventory.isFirst(mentor: mentor) {
+                                        selectedMentor = mentor
+                                        isExpanded = true
+                                        //navigationlink飛ばす
+                                    } else {
+                                        isExpanded = false
+                                        let newMentors = self.inventory.mentors.filter { $0 != mentor } + [mentor]
+                                        self.inventory.mentors = newMentors
+                                    }
                                 }
                                 .transition(.moveUpWardsWhileFadingIn)
                                 .animation(Animation.easeOut.delay(self.transitionDelay(mentor: mentor)))
@@ -58,14 +70,17 @@ struct ContentView: View {
                         }.onAppear {
                             self.shouldDelay = false
                         }
+                        NavigationLink(destination: CardView(mentor: selectedMentor ?? Mentor.placeholder, isExpanded: true), isActive: $isExpanded) {
+                                            EmptyView()
+                                        }
                     }
                 }
-                Spacer()
+                .onAppear {
+                    self.isPresented = true
+                }
+                .padding(.horizontal, Self.padding)
+                .navigationTitle("Mentor Card")
             }
-            .onAppear {
-                self.isPresented.toggle()
-            }
-            .padding(.horizontal, Self.padding)
         }
     }
 }
@@ -91,7 +106,7 @@ extension ContentView {
 //MARK: - Animation Helper functions(おまじない)
 extension ContentView {
     private func cardsResortedAfterTranslation(draggedMentor mentor: Mentor, yTranslation: CGFloat, geometry: GeometryProxy) -> [Mentor] {
-        let cardHeight = (geometry.size.width / CGFloat(16 / 10) - Self.padding)
+        let cardHeight = (geometry.size.width * CGFloat(16 / 10) - Self.padding)
         if abs(yTranslation + CGFloat(inventory.mentors.count) * -Self.cardOffset) > cardHeight {
             let newMentors = [mentor] + Array(inventory.mentors.dropLast())
             print("🧋")

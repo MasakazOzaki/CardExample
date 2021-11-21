@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Mentor: Identifiable, Equatable {
-    var imageName: String?
+    var imageName: String
     var nickname: String
     var realName: String
     var cources: String
@@ -18,6 +18,18 @@ struct Mentor: Identifiable, Equatable {
     var id: String {
         return self.nickname + self.realName
     }
+    
+    static let placeholder =  Mentor(imageName: "N/A",
+                                 nickname: "N/A",
+                                 realName: "N/A",
+                                 cources: "􀫊􀆪􀎶􀛸􀙚􀎑",
+                                 infomation: [MentorInfomation(title: "座右の銘",
+                                                               body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
+                                 
+                                 gradient: Gradient(colors: [
+                                  Color(.sRGB, red: 38 / 255, green: 63 / 255, blue: 159 / 255, opacity: 1),
+                                  Color(.sRGB, red: 174 / 255, green: 77 / 255, blue: 1, opacity: 1)])
+                                )
 }
 
 
