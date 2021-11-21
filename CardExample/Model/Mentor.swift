@@ -7,21 +7,25 @@
 
 import SwiftUI
 
-struct Mentor {
+struct Mentor: Identifiable, Equatable {
     var imageName: String?
     var nickname: String
     var realName: String
     var cources: String
     var infomation: [MentorInfomation]
     var gradient: Gradient
+    
+    var id: String {
+        return self.nickname + self.realName
+    }
 }
 
 
-struct MentorInfomation: Identifiable {
+struct MentorInfomation: Identifiable, Equatable {
     var title: String
     var body: String
     
-    var id : String {
+    var id: String {
         return self.title
     }
 }

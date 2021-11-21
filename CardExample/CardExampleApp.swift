@@ -11,7 +11,7 @@ import SwiftUI
 struct CardExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(Inventory(mentors: DataModel.mentors))
         }
     }
 }
