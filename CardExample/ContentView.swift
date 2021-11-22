@@ -11,10 +11,10 @@ struct ContentView: View {
     //MARK: - アニメーション用パラメータ
     private static let cardTransitionDelay: Double = 0.1
     private static let cardOffset: CGFloat = 20
-    private static let cardOpacity: Double = 0.05
+    private static let cardOpacity: Double = 0
     private static let cardShrinkRatio: CGFloat = 0.05
     private static let cardRotationAngle: Double = 8
-    private static let cardScaleWhenDragginDown: CGFloat = 1.1
+    private static let cardScaleWhenDraggingDown: CGFloat = 1.1
     private static let padding: CGFloat = 60
     
     @EnvironmentObject var inventory: Inventory
@@ -22,7 +22,7 @@ struct ContentView: View {
     //MARK: - アニメーションの状態保持用パラメータ
     @State var draggingOffset: CGFloat = 0
     @State var isDragging: Bool = false
-    @State var firstCardScale: CGFloat = Self.cardScaleWhenDragginDown
+    @State var firstCardScale: CGFloat = Self.cardScaleWhenDraggingDown
     @State var isPresented = false
     @State var isExpanded = false
     @State var shouldDelay = true
@@ -36,10 +36,13 @@ struct ContentView: View {
                         ForEach(self.inventory.mentors) { mentor in
                             CardView(mentor: mentor)
                                 .aspectRatio(10/16, contentMode: .fit)
-                            
-                                .cornerRadius(24)
-                                .shadow(radius: 10)
                                 .opacity(self.opacity(for: mentor))
+                                .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+                                .overlay(RoundedRectangle(cornerRadius: 24, style: .continuous)
+                                            .strokeBorder(Color("white65"), lineWidth: 4)
+                                )
+                                .shadow(radius: 16)
+
                                 .offset(x: 0, y: self.offset(for: mentor))
                                 .scaleEffect(self.scaleEffect(for: mentor))
                                 .rotation3DEffect(self.rotationAngle(for: mentor), axis: (x: 0.5, y: 2, z: -1))
@@ -57,7 +60,6 @@ struct ContentView: View {
                                     if inventory.isFirst(mentor: mentor) {
                                         selectedMentor = mentor
                                         isExpanded = true
-                                        //navigationlink飛ばす
                                     } else {
                                         isExpanded = false
                                         let newMentors = self.inventory.mentors.filter { $0 != mentor } + [mentor]
@@ -70,13 +72,7 @@ struct ContentView: View {
                         }.onAppear {
                             self.shouldDelay = false
                         }
-//                        NavigationLink(destination: CardView(mentor: selectedMentor ?? Mentor.placeholder, isExpanded: true), isActive: $isExpanded) {
-//                                            EmptyView()
-//                                        }
                     }
-                }
-                .sheet(isPresented: $isExpanded) {
-                    CardView(mentor: selectedMentor ?? Mentor.placeholder, isExpanded: true)
                 }
                 .onAppear {
                     self.isPresented = true
@@ -84,6 +80,10 @@ struct ContentView: View {
                 }
                 .padding(.horizontal, Self.padding)
                 .navigationTitle("Mentor Card")
+                NavigationLink(destination: CardView(mentor: selectedMentor ?? Mentor.placeholder, isExpanded: true), isActive: $isExpanded) {
+                    EmptyView()
+
+                }
             }
         }
     }
@@ -124,7 +124,7 @@ extension ContentView {
     private func newFirstCardScale(geometry: GeometryProxy) -> CGFloat {
         if draggingOffset > 0 {
             let newScale = 1 + draggingOffset / (1.5 * geometry.size.height)
-            return min(Self.cardScaleWhenDragginDown, newScale)
+            return min(Self.cardScaleWhenDraggingDown, newScale)
         } else {
             let newScale = 1 + draggingOffset / (1.5 * geometry.size.height)
             return max(1 - CGFloat(inventory.mentors.count) * Self.cardShrinkRatio, newScale)

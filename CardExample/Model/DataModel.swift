@@ -12,8 +12,8 @@ struct DataModel {
         Mentor(imageName: "monster",
                nickname: "Monster",
                realName: "Masakaz Ozaki",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "座右の銘",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
 
                gradient: Gradient(colors: [
@@ -23,14 +23,14 @@ struct DataModel {
         Mentor(imageName: "choccho",
                nickname: "Choccho",
                realName: "Sho Cho",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "STATEMENT",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "STATEMENT",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum."),
-                            MentorInfomation(title: "つかってるiPhone",
+                            MentorInformation(title: "つかってるiPhone",
                                              body: "iPhone 12 Pro Max"),
-                            MentorInfomation(title: "住んでるところ",
+                            MentorInformation(title: "住んでるところ",
                                              body: "東京のどこか"),
-                            MentorInfomation(title: "無人島に持ってくならこれ",
+                            MentorInformation(title: "無人島に持ってくならこれ",
                                              body: "Mac, iPhone, ネット, ソーラーパネル"),
                            ],
                
@@ -42,8 +42,8 @@ struct DataModel {
         Mentor(imageName: "kenty",
                nickname: "Kenty",
                realName: "Kento Katsumata",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "座右の銘",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
                
                gradient: Gradient(colors: [
@@ -53,8 +53,8 @@ struct DataModel {
         Mentor(imageName: "piropon",
                nickname: "Piropon",
                realName: "Hiroya Nakajima",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "座右の銘",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
                
                gradient: Gradient(colors: [
@@ -64,8 +64,8 @@ struct DataModel {
         Mentor(imageName: "azuki",
                nickname: "Azuki",
                realName: "Hazuki Tamura",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "座右の銘",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
                
                gradient: Gradient(colors: [
@@ -75,19 +75,19 @@ struct DataModel {
         Mentor(imageName: "emily",
                nickname: "Emily",
                realName: "Emily Nozaki",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "座右の銘",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
                
                gradient: Gradient(colors: [
                 Color(.sRGB, red: 225 / 255, green: 0 / 255, blue: 203 / 255, opacity: 1),
-                Color(.sRGB, red: 250, green: 232 / 255, blue: 56 / 255, opacity: 1)])
+                Color(.sRGB, red: 250 / 255, green: 232 / 255, blue: 56 / 255, opacity: 1)])
               ),
         Mentor(imageName: "ayanon",
                nickname: "Ayanon",
                realName: "Ayano Fukui",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "座右の銘",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
                
                gradient: Gradient(colors: [
@@ -97,8 +97,8 @@ struct DataModel {
         Mentor(imageName: "cory",
                nickname: "Cory",
                realName: "Riko Yasuda",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "座右の銘",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
                
                gradient: Gradient(colors: [
@@ -108,8 +108,8 @@ struct DataModel {
         Mentor(imageName: "yuruyuru",
                nickname: "YuruYuru",
                realName: "Yuki Kuwashima",
-               sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-               infomation: [MentorInfomation(title: "座右の銘",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
                                              body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
                
                gradient: Gradient(colors: [

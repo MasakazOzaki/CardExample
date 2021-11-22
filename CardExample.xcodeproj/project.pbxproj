@@ -29,6 +29,7 @@
 		E729369D274A755A0077F639 /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = "<group>"; };
 		E729369F274A8DA90077F639 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E72936A2274A91840077F639 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E7913A2E274B6C6C00E576FE /* CardExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CardExample.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +62,11 @@
 		E729368E274A752E0077F639 /* CardExample */ = {
 			isa = PBXGroup;
 			children = (
+				E7913A2E274B6C6C00E576FE /* CardExample.entitlements */,
 				E72936A1274A91030077F639 /* Model */,
 				E729368F274A752E0077F639 /* CardExampleApp.swift */,
-				E7293691274A752E0077F639 /* ContentView.swift */,
 				E719BFF7274AAA25002BD333 /* inventory.swift */,
+				E7293691274A752E0077F639 /* ContentView.swift */,
 				E72936A2274A91840077F639 /* CardView.swift */,
 				E719BFF5274A9816002BD333 /* DetailInfoView.swift */,
 				E7293693274A752F0077F639 /* Assets.xcassets */,
@@ -294,6 +296,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CardExample/CardExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CardExample/Preview Content\"";
@@ -314,9 +317,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.masakaz.CardExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -325,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CardExample/CardExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CardExample/Preview Content\"";
@@ -345,9 +350,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.masakaz.CardExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};

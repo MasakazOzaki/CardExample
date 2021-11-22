@@ -21,7 +21,7 @@ struct CardView: View {
                     .aspectRatio(contentMode: .fit)
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     .overlay(
-                        Circle().stroke(.white, lineWidth: 4)
+                        Circle().strokeBorder(Color("white65"), lineWidth: 4)
                     )
                     .frame(maxHeight: 120)
                 
@@ -35,14 +35,14 @@ struct CardView: View {
                 Text(mentor.realName)
                     .font(.title3)
                 
-                    .foregroundColor(Color("white50"))
+                    .foregroundColor(Color("white65"))
                     .bold()
                 
                 Spacer()
                 HStack {
-                    ForEach(mentor.sysmbolNames, id: \.self) { symbolName in
+                    ForEach(mentor.symbolNames, id: \.self) { symbolName in
                         Image(systemName: symbolName)
-                            .foregroundColor(Color("white50"))
+                            .foregroundColor(Color("white65"))
                     }
                 }
                     
@@ -50,7 +50,7 @@ struct CardView: View {
                 
                 //MARK: - 詳細表示のみで出てくるView
                 if isExpanded {
-                    ForEach(mentor.infomation) { info in
+                    ForEach(mentor.information) { info in
                         Spacer()
                         DetailInfoView(info: info)
                         Spacer()
@@ -82,8 +82,8 @@ struct CardView_Previews: PreviewProvider {
         CardView(mentor: Mentor(imageName: "choccho",
                                 nickname: "Choccho",
                                 realName: "Sho Cho",
-                                sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
-                                infomation: [MentorInfomation(title: "座右の銘",
+                                symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+                                information: [MentorInformation(title: "座右の銘",
                                                               body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum."),
                                             ],
                                 

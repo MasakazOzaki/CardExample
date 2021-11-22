@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct DetailInfoView: View {
-    var info: MentorInfomation
+    var info: MentorInformation
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(info.title)
                 .font(.headline)
-                .foregroundColor(Color("white50"))
+                .foregroundColor(Color("white65"))
                 .bold()
             Text(info.body)
                 .foregroundColor(Color("white95"))
@@ -23,7 +23,7 @@ struct DetailInfoView: View {
 
 struct DetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailInfoView(info: MentorInfomation(title: "座右の銘",
+        DetailInfoView(info: MentorInformation(title: "座右の銘",
                                               body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum."))
     }
 }
