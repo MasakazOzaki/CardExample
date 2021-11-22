@@ -35,22 +35,26 @@ struct CardView: View {
                 Text(mentor.realName)
                     .font(.title3)
                 
-                    .foregroundColor(Color("white75"))
+                    .foregroundColor(Color("white50"))
                     .bold()
                 
                 Spacer()
-                
-                Text(mentor.cources)
-                    .foregroundColor(Color("white75"))
+                HStack {
+                    ForEach(mentor.sysmbolNames, id: \.self) { symbolName in
+                        Image(systemName: symbolName)
+                            .foregroundColor(Color("white50"))
+                    }
+                }
+                    
                 
                 
                 //MARK: - 詳細表示のみで出てくるView
                 if isExpanded {
-                    Spacer()
                     ForEach(mentor.infomation) { info in
+                        Spacer()
                         DetailInfoView(info: info)
+                        Spacer()
                     }
-                    Spacer()
                 }
                 
                 //MARK: -　ロゴ
@@ -78,7 +82,7 @@ struct CardView_Previews: PreviewProvider {
         CardView(mentor: Mentor(imageName: "choccho",
                                 nickname: "Choccho",
                                 realName: "Sho Cho",
-                                cources: "􀫊 􀆪 􀎶 􀛸 􀙚 􀎑",
+                                sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
                                 infomation: [MentorInfomation(title: "座右の銘",
                                                               body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum."),
                                             ],

@@ -13,7 +13,7 @@ struct DetailInfoView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(info.title)
                 .font(.headline)
-                .foregroundColor(Color("white75"))
+                .foregroundColor(Color("white50"))
                 .bold()
             Text(info.body)
                 .foregroundColor(Color("white95"))

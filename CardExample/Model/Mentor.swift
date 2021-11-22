@@ -11,7 +11,7 @@ struct Mentor: Identifiable, Equatable {
     var imageName: String
     var nickname: String
     var realName: String
-    var cources: String
+    var sysmbolNames: [String]
     var infomation: [MentorInfomation]
     var gradient: Gradient
     
@@ -22,7 +22,7 @@ struct Mentor: Identifiable, Equatable {
     static let placeholder =  Mentor(imageName: "N/A",
                                  nickname: "N/A",
                                  realName: "N/A",
-                                 cources: "􀫊􀆪􀎶􀛸􀙚􀎑",
+                                 sysmbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
                                  infomation: [MentorInfomation(title: "座右の銘",
                                                                body: "Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum.")],
                                  

@@ -70,13 +70,17 @@ struct ContentView: View {
                         }.onAppear {
                             self.shouldDelay = false
                         }
-                        NavigationLink(destination: CardView(mentor: selectedMentor ?? Mentor.placeholder, isExpanded: true), isActive: $isExpanded) {
-                                            EmptyView()
-                                        }
+//                        NavigationLink(destination: CardView(mentor: selectedMentor ?? Mentor.placeholder, isExpanded: true), isActive: $isExpanded) {
+//                                            EmptyView()
+//                                        }
                     }
+                }
+                .sheet(isPresented: $isExpanded) {
+                    CardView(mentor: selectedMentor ?? Mentor.placeholder, isExpanded: true)
                 }
                 .onAppear {
                     self.isPresented = true
+                    self.selectedMentor = inventory.mentors.last
                 }
                 .padding(.horizontal, Self.padding)
                 .navigationTitle("Mentor Card")
