@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+
+///ここから下コピペ
+
     //MARK: - アニメーション用パラメータ
     private static let cardTransitionDelay: Double = 0.1
     private static let cardOffset: CGFloat = 20
@@ -27,14 +30,19 @@ struct ContentView: View {
     @State var isExpanded = false
     @State var shouldDelay = true
     @State var selectedMentor: Mentor?
-    
+
+    ///ここから上までチートシートコピペ
+    ///
+    ///
     var body: some View {
+        ///  ここから下頑張って書く
         NavigationView {
             GeometryReader { geometry in
                 ZStack() {
                     if self.isPresented {
                         ForEach(self.inventory.mentors) { mentor in
                             CardView(mentor: mentor)
+                            ///modifierはコピペ
                                 .aspectRatio(10/16, contentMode: .fit)
                                 .opacity(self.opacity(for: mentor))
                                 .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
@@ -68,7 +76,7 @@ struct ContentView: View {
                                 }
                                 .transition(.moveUpWardsWhileFadingIn)
                                 .animation(Animation.easeOut.delay(self.transitionDelay(mentor: mentor)))
-                            
+                          /// ここから下は頑張ってかく
                         }.onAppear {
                             self.shouldDelay = false
                         }
@@ -80,6 +88,7 @@ struct ContentView: View {
                 }
                 .padding(.horizontal, Self.padding)
                 .navigationTitle("Mentor Card")
+                //コピペしても良い
                 NavigationLink(destination: CardView(mentor: selectedMentor ?? Mentor.placeholder, isExpanded: true), isActive: $isExpanded) {
                     EmptyView()
 
@@ -90,6 +99,7 @@ struct ContentView: View {
 }
 
 
+/// 🥰おまじないがいっぱい🥰
 //MARK: - ドラッグ
 extension ContentView {
     func dragGestureDidChange(value: DragGesture.Value, mentor: Mentor, geometry: GeometryProxy) {

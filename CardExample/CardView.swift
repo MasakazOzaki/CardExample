@@ -5,6 +5,8 @@
 //  Created by Masakaz Ozaki on 2021/11/21.
 //
 
+/// このファイルは講座中に作る
+
 import SwiftUI
 
 struct CardView: View {

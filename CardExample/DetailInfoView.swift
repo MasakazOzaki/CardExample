@@ -5,6 +5,8 @@
 //  Created by Masakaz Ozaki on 2021/11/22.
 //
 
+/// このファイルは講座中に作る
+
 import SwiftUI
 
 struct DetailInfoView: View {
