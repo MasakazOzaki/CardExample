@@ -5,6 +5,12 @@
 //  Created by Masakaz Ozaki on 2021/11/21.
 //
 
+
+///
+///**教科書で言うところのMentor Class。触らない**
+///
+
+
 import SwiftUI
 
 struct Mentor: Identifiable, Equatable {

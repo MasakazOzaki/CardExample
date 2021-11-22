@@ -5,6 +5,12 @@
 //  Created by Masakaz Ozaki on 2021/11/21.
 //
 
+
+///
+///**データが入っている。**
+///適宜追加、編集OK
+///
+
 import SwiftUI
 
 struct DataModel {

@@ -5,6 +5,9 @@
 //  Created by Masakaz Ozaki on 2021/11/22.
 //
 
+///**n番目を管理する。カードケース的な役割のClass**
+///触らない
+///
 import Foundation
 
 final class Inventory: ObservableObject {
