@@ -117,6 +117,29 @@ struct DataModel {
                 Color(.sRGB, red: 0 / 255, green: 229 / 255, blue: 47 / 255, opacity: 1)])
               ),
 
+        Mentor(imageName: "kimchi",
+               nickname: "Kimchi",
+               realName: "Yona Kin",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
+                                             body: "たのしく生きる")],
+
+               gradient: Gradient(colors: [
+                Color(.sRGB, red: 225 / 255, green: 0 / 255, blue: 203 / 255, opacity: 1),
+                Color(.sRGB, red: 250 / 255, green: 232 / 255, blue: 56 / 255, opacity: 1)])
+              ),
+        Mentor(imageName: "toppo",
+               nickname: "Toppo",
+               realName: "Risako Kato",
+               symbolNames: ["swift", "gamecontroller", "globe", "paintbrush", "chevron.left.forwardslash.chevron.right", "film", "cube"],
+               information: [MentorInformation(title: "座右の銘",
+                                             body: "毎日笑顔")],
+
+               gradient: Gradient(colors: [
+                Color(.sRGB, red: 225 / 255, green: 0 / 255, blue: 203 / 255, opacity: 1),
+                Color(.sRGB, red: 250 / 255, green: 232 / 255, blue: 56 / 255, opacity: 1)])
+              ),
+
         
         
     ]
